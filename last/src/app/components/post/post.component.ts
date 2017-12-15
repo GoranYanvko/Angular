@@ -13,6 +13,7 @@ export class PostComponent implements OnInit {
   commentText: CommentModel;
   allComments: any;
   commentTemplate: Array<Object>;
+  user: boolean;
   constructor(private route: ActivatedRoute, private http: PostServices) { }
 
   ngOnInit() { 
@@ -30,6 +31,9 @@ export class PostComponent implements OnInit {
   }
 
   loadPost() {
+    if(localStorage.getItem('token')) {
+      this.user = true;
+    }
     this.commentText = new CommentModel('');
     let id = this.route.snapshot.url[1].path;
     this.http.getSingelPost({id}).subscribe(postInfo=>{

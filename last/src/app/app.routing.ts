@@ -19,6 +19,6 @@ export const routes = [
     {path:'register', component: RegisterComponent},
     {path:'admin', component: AdminComponent, canActivate: [AdminGards]},
     {path:'post/:id', component: PostComponent},
-    {path:'books', loadChildren:'app/components/books/books.module#BookComponentModule', canActivate: [AuthGards]}
+   {path:'books', loadChildren:'app/components/books/books.module#BookComponentModule', canActivate: [AuthGards]}
 ]
 

@@ -50,7 +50,7 @@
                                     </li>
                                     
                                 </ul>
-                                <form class="form-inline" (ngSubmit)="addComment()" #commentForm="ngForm">
+                                <form class="form-inline" (ngSubmit)="addComment()" #commentForm="ngForm" *ngIf="user">
                                     <div class="form-group">
                                         <input class="form-control" type="text" placeholder="Your comments" name="comment" [(ngModel)]="commentText.text" #text="ngModel"
                                             minlength="3" />
