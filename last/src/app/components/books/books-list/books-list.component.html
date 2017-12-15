@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let book of books">
+    <div>{{book.name}}</div>
+    <a [routerLink]="['/books/details', book.id]">Go</a>
+  </li>
+</ul>

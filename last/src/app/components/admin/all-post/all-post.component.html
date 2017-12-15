@@ -1,0 +1,22 @@
+<div class="container" *ngIf="posts">
+  <h1>All Posts</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Region</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts" class="info">
+      <td>{{post.title}}</td>
+      <td>{{post.raion}}</td>
+      <td>{{post.price}}</td>
+      <td><a (click)="deleteUser(post._id)" class='mouse'> Delete </a></td>
+    </tr>      
+  </tbody>
+</table>
+
+<button (click)="loadeMore()">Loade More</button>
+</div>

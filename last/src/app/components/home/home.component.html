@@ -1,0 +1,23 @@
+<div class="container">
+        <div class="row">
+                <div class="col-sm-4 col-md-4 myclass" *ngFor="let post of posts">
+                        <div class="post">
+                            <div class="post-img-content">
+                                <img [src]="post.img" class="img-responsive" />
+                                <span class="post-title"><b>{{post.title}}</b><br />
+                                    <b>{{post.price}} лв.</b></span>
+                            </div>
+                            <div class="content">
+                               
+                                <div>
+                                   {{post.description}}
+                                </div>
+                                <div>
+                                    <a [routerLink]="['/post', post._id ]" class="btn btn-success btn-sm">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+        </div>
+    </div>
+    

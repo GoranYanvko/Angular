@@ -1,0 +1,11 @@
+.center {
+    margin: 20px 30%;
+    width: 100%;
+}
+.tablica {
+    width: 100%;
+    margin: 0 30%;
+}
+.mouse:hover {
+    cursor: pointer;
+}

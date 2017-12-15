@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="card card-container">
+<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+<p id="profile-name" class="profile-name-card"></p>
+{{registerForm.username}}
+<form class="form-signin" #userForm="ngForm"  (ngSubmit)="onSubmit()">
+        <small class="err" [hidden]="username.valid || username.pristine">
+                *Name is required (minimum 3).
+         </small>
+    <span id="reauth-email" class="reauth-email"></span>
+    <input 
+         type="text" 
+         id="inputUsername" 
+         class="form-control"
+         placeholder="Enter Username" 
+         required 
+         autofocus
+         name="username"
+         [(ngModel)]="registerForm.username"
+         #username="ngModel"
+         minlength="3"
+         >
+        
+         <small class="err" [hidden]="password.valid || password.pristine">
+               *Password is required (minimum 3).
+         </small>
+    <input 
+          type="password" 
+          id="inputPassword" 
+          class="form-control" 
+          placeholder="Password" 
+          required
+          name="password"
+          [(ngModel)]="registerForm.password"
+          #password="ngModel"
+          minlength="3"
+          maxlength="8"
+          >
+
+          <small class="err" [hidden]="name.valid || name.pristine">
+              *Name is required (minimum 3).
+       </small>
+  <span id="reauth-email" class="reauth-email"></span>
+  <input 
+       type="text" 
+       id="inputUsername" 
+       class="form-control"
+       placeholder="Enter Your Name" 
+       required 
+       autofocus
+       name="name"
+       [(ngModel)]="registerForm.name"
+       #name="ngModel"
+       minlength="3"
+       >
+       <small class="err" [hidden]="email.valid || email.pristine">
+          *Name is required (minimum 3).
+   </small>
+       <input 
+       type="text" 
+       id="inputEmail" 
+       class="form-control"
+       placeholder="Enter Email" 
+       required 
+       autofocus
+       name="email"
+       [(ngModel)]="registerForm.email"
+       #email="ngModel"
+       minlength="3"
+       >
+    <button 
+         class="btn btn-lg btn-primary btn-block btn-signin" 
+         type="submit"
+         [disabled]="!username.valid || !name.valid || !password.valid || !email.valid "
+         >Login in</button>
+</form>
+</div>
+</div>

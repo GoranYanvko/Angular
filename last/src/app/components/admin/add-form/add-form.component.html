@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="card card-container">
+<img id="profile-img" class="profile-img-card" [src]="form.img" *ngIf="form.img"/>
+<p id="profile-name" class="profile-name-card"></p>
+{{ form.title }}
+<form class="form-signin" #formUser="ngForm"  (ngSubmit)="onSubmit()">
+        <small class="err" [hidden]="img.valid || img.pristine">
+                *Name is required (minimum 10).
+         </small>
+    <span id="reauth-email" class="reauth-email"></span>
+    <input 
+         type="text" 
+         id="inputUsername" 
+         class="form-control"
+         placeholder="Enter url" 
+         required 
+         autofocus
+         name="img"
+         [(ngModel)]="form.img"
+         #img="ngModel"
+         minlength="7"
+         >
+        
+         <small class="err" [hidden]="title.valid || title.pristine">
+               *Title is required (minimum 3).
+         </small>
+    <input 
+          type="text" 
+          id="inputPassword" 
+          class="form-control" 
+          placeholder="title" 
+          required
+          name="title"
+          [(ngModel)]="form.title"
+          #title="ngModel"
+          minlength="3"
+          maxlength="28"
+          >
+
+          <small class="err" [hidden]="description.valid || description.pristine">
+              *Description is required (minimum 3).
+        </small>
+   <input 
+         type="text" 
+         id="inputPassword" 
+         class="form-control" 
+         placeholder="Description" 
+         required
+         name="description"
+         [(ngModel)]="form.description"
+         #description="ngModel"
+         minlength="3"
+         maxlength="28"
+         >
+         <small class="err" [hidden]="raion.valid || raion.pristine">
+            *Raion is required (minimum 3).
+      </small>
+         <input 
+         type="text" 
+         id="inputPassword" 
+         class="form-control" 
+         placeholder="Raion" 
+         required
+         name="raion"
+         [(ngModel)]="form.raion"
+         #raion="ngModel"
+         minlength="3"
+         maxlength="10"
+         >
+
+         <small class="err" [hidden]="price.valid || price.pristine">
+            *Price is required (minimum 3).
+      </small>
+         <input 
+         type="text" 
+         id="inputPassword" 
+         class="form-control" 
+         placeholder="Price" 
+         required
+         name="price"
+         [(ngModel)]="form.price"
+         #price="ngModel"
+         maxlength="10"
+         >
+
+
+    <button 
+         class="btn btn-lg btn-primary btn-block btn-signin" 
+         type="submit"
+         [disabled]="!formUser.valid"
+         >Add</button>
+</form>
+</div>
+</div>

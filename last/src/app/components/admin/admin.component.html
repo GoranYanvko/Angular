@@ -1,0 +1,32 @@
+<div class="center">
+<button type="button" class="btn btn-info first" (click)="loadeUser()">Виж всички потребители</button>
+<button type="button" class="btn btn-info"(click)="loadePost()">Виж всички обяви</button>
+<button type="button" class="btn btn-info" (click)="loadeForm()">Добави обява</button>
+</div>
+
+<div class="container" *ngIf="users">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" class="info">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.rolle}}</td>
+          <td><a (click)="deleteUser(user._id)" class='mouse'> Delete </a></td>
+        </tr>      
+      </tbody>
+    </table>
+
+  <button (click)="loadeMore()">Loade More</button>
+  </div>
+
+  <app-add-form *ngIf="ads"> </app-add-form> 
+  <app-all-post *ngIf="post"></app-all-post>
+
+
